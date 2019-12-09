@@ -1,0 +1,47 @@
+<div class="container">
+        <div class="ui-g">
+            <div class="ui-g-12">
+                <h1>Vendas</h1>
+            </div>
+            <div class="ui-g-12">   
+                <button pButton type="button" style="margin: 2px" (click)="listar()" label="Pesquisar"></button>
+            </div>
+            <div class="ui-g-12">
+                <label>Pesquisar Por ID</label>
+                <input type="text" required pInputText>
+            </div>
+        </div>
+    
+    
+    
+            <div class="ui-g-12">
+              <p-table [value]="erros" [paginator]="true" [responsive]="true"  [rows]="20">
+                <ng-template pTemplate="emptymessage">
+                  Nenhuma Venda Encontrada
+                </ng-template>
+    
+                <ng-template pTemplate="header">
+                    <tr>
+                      <th>ID</th>
+                      <th>Nome Do Produto</th>
+                      <th>Preço</th>
+                      <th>Nome Do Cliente</th>
+                      <th>CPF</th>
+                      <th>DataNasc</th>
+                      <th>Sexo</th>
+                    </tr>
+                </ng-template>
+                  <ng-template pTemplate="body" let-erro>
+                    <tr>
+                      <td>{{erro.id}}</td>
+                      <td>{{erro.ip}}</td>
+                      <td>{{erro.cnpj}}</td>
+                      <td>{{erro.datahora | date: 'dd/MM/y HH:mm:ss'}}</td>
+                      <td>{{erro.contrato}}</td>
+                    </tr>
+                  </ng-template>
+              </p-table>
+          </div>
+    </div>
+    
+        
